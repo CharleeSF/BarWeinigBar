@@ -3,7 +3,7 @@
 <title>BarWeinigBarWeinig</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="icon" href="Media/Logo1.png" >
+<link rel="icon" href="Media/Logo2.jpeg" >
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -21,7 +21,7 @@
     <!-- Navbar -->
     <div class="w3-top">
         <div class="w3-bar w3-pink w3-card">
-            <a class="w3-bar-item w3-button w3-hover-purple  w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+            <a class="w3-bar-item w3-button w3-hover-purple  w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i id="menu-toggle" class="fa fa-bars"></i></a>
             <a href="#" class="w3-bar-item w3-button w3-hover-purple  w3-padding-large">THUIS</a>
             <a href="#concept" class="w3-bar-item w3-button w3-hover-purple w3-padding-large w3-hide-small">CONCEPT</a>
             <a href="#assortiment" class="w3-bar-item w3-button w3-hover-purple w3-padding-large w3-hide-small">ASSORTIMENT</a>
@@ -47,19 +47,17 @@
         <a href="#" class="w3-bar-item w3-button w3-hover-purple w3-padding-large" onclick="myFunction()">CONTACT</a>
     </div>
 
-    <!-- Page content -->
-    <div class="w3-content w3-purple" style="max-width:2000px;margin-top:46px">
-
+    <div id="main" class="w3-purple" style="max-width:2000px;padding-top:120px;padding-left:2px;padding-right:2px">
         <!-- Automatic Slideshow Images -->
-            <div id="foto-container" class="w3-display-container w3-center">
-                <img  id="slideshow-foto" class="w3-card" src="Media/bankchillings.jpeg" style="height:200px">
-            </div>
-    </div>
-
-    <div id="main" class="w3-purple">
-
         <!-- The Band Section -->
-        <div class="w3-container w3-content w3-center w3-pink w3-card" style="max-width:800px" id="concept">
+        <div class="w3-container w3-content w3-center w3-pink w3-card" style="max-width:800px; padding:5px; border-radius:5px" id="concept">
+            <div class="w3-black w3-card" style="border-radius:5px">
+                <img id="slideshow-right-logo" class="w3-card" src="Media/Logo2.jpeg" style="width:50%; max-width:300px" />
+            </div>
+            <div id="foto-container">
+
+                <img id="slideshow-foto" class="w3-card" src="Media/Slideshow/slide1.jpg" style="height:200px">
+            </div>
             <h2 class="w3-wide">Bar Weinig Concept</h2>
             <p class="w3-opacity"><i></i></p>
             <p class="w3-center">
@@ -150,7 +148,7 @@
                 setTimeout(carousel, 4000);
             }
             else {
-                document.getElementById("foto-container").style.display = "none";
+                document.getElementById("slideshow-foto").style.display = "none";
                 document.getElementById("main").style.paddingTop = "50px";
             }
         }
@@ -166,10 +164,16 @@
         }
 
         // When the user clicks anywhere outside of the modal, close it
-        var modal = document.getElementById('ticketModal');
+        
         window.onclick = function (event) {
-            if (event.target == modal) {
-                modal.style.display = "none";
+            console.log("yes");
+            var navmenu = document.getElementById('navDemo');
+            
+            if (event.target.parentNode != navmenu) {
+                if (event.target != document.getElementById('menu-toggle')) {
+                    //navmenu.className = navmenu.className.replace(" w3-show", "");
+                }
+                console.log("yesyes");
             }
         }
     </script>
