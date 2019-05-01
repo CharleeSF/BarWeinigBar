@@ -56,13 +56,9 @@
             <div class="w3-black w3-card" style="border-radius:5px">
                 <img id="slideshow-right-logo" class="w3-card" src="Media/Logo2.jpeg" style="width:50%; max-width:300px" />
             </div>
-            <div id="foto-container">
-
-                <img id="slideshow-foto" class="w3-card" src="Media/Slideshow/slide1.jpg" style="height:200px">
-            </div>
             <div class="container w3-card w3-purple" style="margin:30px; padding:5px; border-radius:5px;">
                 <h2>Aftermovie Pilot in het Park</h2>
-                <video width="500" height="320" controls>
+                <video controls style="max-width: 100%; max-height: 100%; ">
                     <source src="Media/BarWeinig-Tuinwarming-01052018-v02.mp4" type="video/mp4">
                         Your browser does not support the video tag.
                 </video>
@@ -121,28 +117,21 @@
                 <div class="w3-container" id="kiekjes">
                     <h2 class="w3-wide w3-center">Bar Weinig Kiekjes</h2>
                     <div class="container" style="display:flex; justify-content:space-between;">
-                        <div class="container w3-button w3-card w3-purple w3-hover-blue w3-hover-text-purple w3-text-blue" style="border-radius:5px; position:relative; padding:5px; width:24%" onclick="changeKiekjes(0)">
-                            <p style="font-size:40px; margin:0px;">Bar</p>
-                            <img class="w3-card" src="Media/20190421_150707.jpg" width=120px/>
+                        <div class="container w3-button w3-card w3-purple w3-hover-blue w3-hover-text-purple w3-text-blue" style="border-radius:5px; position:relative; padding:5px; width:30%" onclick="changeKiekjes(0)">
+                            <p style="font-size:1.3em; margin:0px;">Bar&Sfeer</p>
+                            <img class="w3-card" src="Media/slideshow0/1.jpg" style="width:100%"/>
                         </div>
-                        <div class="container w3-button w3-card w3-purple w3-hover-blue w3-hover-text-purple w3-text-blue" style="border-radius:5px; position:relative; padding:5px; width:24%" onclick="changeKiekjes(1)">
-                            <p style="font-size:40px; margin:0px;">Sfeer</p>
-                            <img class="w3-card" src="Media/20190421_150707.jpg" width=120px/>
+                        <div class="container w3-button w3-card w3-purple w3-hover-blue w3-hover-text-purple w3-text-blue" style="border-radius:5px; position:relative; padding:5px; width:30%" onclick="changeKiekjes(1)">
+                            <p style="font-size:1.3em; margin:0px;">Talent</p>
+                            <img class="w3-card" src="Media/slideshow1/1.jpg" style="width:100%"/>
                         </div>
-                        <div class="container w3-button w3-card w3-purple w3-hover-blue w3-hover-text-purple w3-text-blue" style="border-radius:5px; position:relative; padding:5px; width:24%" onclick="changeKiekjes(2)">
-                            <p style="font-size:40px; margin:0px;">Talent</p>
-                            <img class="w3-card" src="Media/20190421_150707.jpg" width=120px/>
-                        </div>
-                        <div class="container w3-button w3-card w3-purple w3-hover-blue w3-hover-text-purple w3-text-blue" style="border-radius:5px; position:relative; padding:5px; width:24%" onclick="changeKiekjes(3)">
-                            <p style="font-size:40px; margin:0px;">Opbouw</p>
-                            <img class="w3-card" src="Media/IMG_0358.jpg" width=120px/>
+                        <div class="container w3-button w3-card w3-purple w3-hover-blue w3-hover-text-purple w3-text-blue" style="border-radius:5px; position:relative; padding:5px; width:30%" onclick="changeKiekjes(2)">
+                            <p style="font-size:1.3em; margin:0px;">Opbouw</p>
+                            <img class="w3-card" src="Media/slideshow2/1.jpg" style="width:100%"/>
                         </div>
                     </div>
-                    <div class="container w3-card w3-purple" style="margin-top:10px; padding:40px; border-radius:5px;">
-                        <img id="slideshow0" class="w3-card" src="Media/20190421_150707.jpg" width=400px/>
-                        <img id="slideshow1" class="w3-card" src="Media/20190421_150707.jpg" width=400px/ style="display:none">
-                        <img id="slideshow2" class="w3-card" src="Media/20190421_150707.jpg" width=400px/ style="display:none">
-                        <img id="slideshow3" class="w3-card" src="Media/IMG_0358.jpg" width=400px/ style="display:none">
+                    <div class="container w3-card w3-purple" style="margin-top:10px; padding:40px; border-radius:5px;" onclick="nextPhoto()">
+                        <img id="slideshow-foto" class="w3-card" src="Media/slideshow0/1.jpg" style="image-orientation: from-image; max-width:100%;"/>
                     </div>
                 </div>
 
@@ -172,23 +161,19 @@
     <script>
         // Automatic Slideshow - change image every 4 seconds
         var myIndex = 0;
-        var numberOfSlides = 0;
+        var numberOfSlides =[11, 6, 12];
+        var kiekjes_which = 0;
+        var carouselTimeout;
         carousel();
 
         function carousel() {
-            if (numberOfSlides > 0) {
-                myIndex++;
-                if (myIndex > numberOfSlides) { myIndex = 1 }
-                document.getElementById("foto-container").style.display = "block";
-                var filename = "Media/Slideshow/slide" + myIndex + ".jpg";
-                console.log(filename);
-                document.getElementById("slideshow-foto").src = filename;
-                setTimeout(carousel, 4000);
-            }
-            else {
-                document.getElementById("slideshow-foto").style.display = "none";
-                document.getElementById("main").style.paddingTop = "50px";
-            }
+            myIndex++;
+            console.log(kiekjes_which);
+            if (myIndex > numberOfSlides[kiekjes_which]) { myIndex = 1 }
+            var filename = "Media/slideshow" + kiekjes_which + "/" + myIndex + ".jpg";
+            console.log(filename);
+            document.getElementById("slideshow-foto").src = filename;
+            carouselTimeout = setTimeout(carousel, 4000);
         }
 
         // Used to toggle the menu on small screens when clicking on the menu button
@@ -202,11 +187,15 @@
         }
 
         function changeKiekjes(which) {
-            document.getElementById("slideshow0").style.display = "none";
-            document.getElementById("slideshow1").style.display = "none";
-            document.getElementById("slideshow2").style.display = "none";
-            document.getElementById("slideshow3").style.display = "none";
-            document.getElementById("slideshow" + which).style.display = "";
+            kiekjes_which = which;
+            myIndex = 0;
+            clearTimeout(carouselTimeout);
+            carousel();
+        }
+
+        function nextPhoto(){
+            clearTimeout(carouselTimeout);
+            carousel();
         }
 
         // When the user clicks anywhere outside of the modal, close it
