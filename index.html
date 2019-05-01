@@ -25,6 +25,7 @@
             <a href="#" class="w3-bar-item w3-button w3-hover-purple  w3-padding-large">THUIS</a>
             <a href="#concept" class="w3-bar-item w3-button w3-hover-purple w3-padding-large w3-hide-small">CONCEPT</a>
             <a href="#assortiment" class="w3-bar-item w3-button w3-hover-purple w3-padding-large w3-hide-small">ASSORTIMENT</a>
+            <a href="#kiekjes" class="w3-bar-item w3-button w3-hover-purple w3-padding-large w3-hide-small">KIEKJES</a>
             <a href="#contact" class="w3-bar-item w3-button w3-hover-purple  w3-padding-large w3-hide-small">CONTACT</a>
             <!--           <div class="w3-dropdown-hover w3-hide-small">
                            <button class="w3-padding-large w3-button" title="More">MORE <i class="fa fa-caret-down"></i></button>
@@ -44,6 +45,7 @@
         <a href="#" class="w3-bar-item w3-button w3-hover-purple w3-padding-large" onclick="myFunction()">THUIS</a>
         <a href="#concept" class="w3-bar-item w3-button w3-hover-purple w3-padding-large" onclick="myFunction()">CONCEPT</a>
         <a href="#assortiment" class="w3-bar-item w3-button w3-hover-purple w3-padding-large" onclick="myFunction()">ASSORTIMENT</a>
+        <a href="#kiekjes" class="w3-bar-item w3-button w3-hover-purple w3-padding-large" onclick="myFunction()">KIEKJES</a>
         <a href="#" class="w3-bar-item w3-button w3-hover-purple w3-padding-large" onclick="myFunction()">CONTACT</a>
     </div>
 
@@ -57,6 +59,13 @@
             <div id="foto-container">
 
                 <img id="slideshow-foto" class="w3-card" src="Media/Slideshow/slide1.jpg" style="height:200px">
+            </div>
+            <div class="container w3-card w3-purple" style="margin:30px; padding:5px; border-radius:5px;">
+                <h2>Aftermovie Pilot in het Park</h2>
+                <video width="500" height="320" controls>
+                    <source src="Media/BarWeinig-Tuinwarming-01052018-v02.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                </video>
             </div>
             <h2 class="w3-wide">Bar Weinig Concept</h2>
             <p class="w3-opacity"><i></i></p>
@@ -109,6 +118,34 @@
                     Deze zijn tijdelijk - dus bar weinig spijt.
                 </div>
 
+                <div class="w3-container" id="kiekjes">
+                    <h2 class="w3-wide w3-center">Bar Weinig Kiekjes</h2>
+                    <div class="container" style="display:flex; justify-content:space-between;">
+                        <div class="container w3-button w3-card w3-purple w3-hover-blue w3-hover-text-purple w3-text-blue" style="border-radius:5px; position:relative; padding:5px; width:24%" onclick="changeKiekjes(0)">
+                            <p style="font-size:40px; margin:0px;">Bar</p>
+                            <img class="w3-card" src="Media/20190421_150707.jpg" width=120px/>
+                        </div>
+                        <div class="container w3-button w3-card w3-purple w3-hover-blue w3-hover-text-purple w3-text-blue" style="border-radius:5px; position:relative; padding:5px; width:24%" onclick="changeKiekjes(1)">
+                            <p style="font-size:40px; margin:0px;">Sfeer</p>
+                            <img class="w3-card" src="Media/20190421_150707.jpg" width=120px/>
+                        </div>
+                        <div class="container w3-button w3-card w3-purple w3-hover-blue w3-hover-text-purple w3-text-blue" style="border-radius:5px; position:relative; padding:5px; width:24%" onclick="changeKiekjes(2)">
+                            <p style="font-size:40px; margin:0px;">Talent</p>
+                            <img class="w3-card" src="Media/20190421_150707.jpg" width=120px/>
+                        </div>
+                        <div class="container w3-button w3-card w3-purple w3-hover-blue w3-hover-text-purple w3-text-blue" style="border-radius:5px; position:relative; padding:5px; width:24%" onclick="changeKiekjes(3)">
+                            <p style="font-size:40px; margin:0px;">Opbouw</p>
+                            <img class="w3-card" src="Media/IMG_0358.jpg" width=120px/>
+                        </div>
+                    </div>
+                    <div class="container w3-card w3-purple" style="margin-top:10px; padding:40px; border-radius:5px;">
+                        <img id="slideshow0" class="w3-card" src="Media/20190421_150707.jpg" width=400px/>
+                        <img id="slideshow1" class="w3-card" src="Media/20190421_150707.jpg" width=400px/ style="display:none">
+                        <img id="slideshow2" class="w3-card" src="Media/20190421_150707.jpg" width=400px/ style="display:none">
+                        <img id="slideshow3" class="w3-card" src="Media/IMG_0358.jpg" width=400px/ style="display:none">
+                    </div>
+                </div>
+
                 <div class="w3-container w3-content w3-padding-64" style="max-width:800px" id="contact">
                     <h2 class="w3-wide w3-center">CONTACT</h2>
                     <div class="w3-row">
@@ -118,6 +155,7 @@
         </div>
 
     </div>
+
 
 
     <!-- Footer -->
@@ -161,6 +199,14 @@
             } else {
                 x.className = x.className.replace(" w3-show", "");
             }
+        }
+
+        function changeKiekjes(which) {
+            document.getElementById("slideshow0").style.display = "none";
+            document.getElementById("slideshow1").style.display = "none";
+            document.getElementById("slideshow2").style.display = "none";
+            document.getElementById("slideshow3").style.display = "none";
+            document.getElementById("slideshow" + which).style.display = "";
         }
 
         // When the user clicks anywhere outside of the modal, close it
