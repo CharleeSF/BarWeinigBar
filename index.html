@@ -161,16 +161,14 @@
     <script>
         // Automatic Slideshow - change image every 4 seconds
         var myIndex = 0;
-        var numberOfSlides =[11, 6, 12];
+        var numberOfSlides =[15, 9, 12];
         var kiekjes_which = 0;
         var carouselTimeout;
         carousel();
 
         function carousel() {
-            myIndex++;
             console.log(kiekjes_which);
-            if (myIndex > numberOfSlides[kiekjes_which]) { myIndex = 1 }
-            var filename = "Media/slideshow" + kiekjes_which + "/" + myIndex + ".jpg";
+            var filename = "Media/slideshow" + kiekjes_which + "/" + Math.floor(Math.random()*numberOfSlides[kiekjes_which]+1) + ".jpg";
             console.log(filename);
             document.getElementById("slideshow-foto").src = filename;
             carouselTimeout = setTimeout(carousel, 4000);
