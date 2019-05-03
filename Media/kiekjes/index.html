@@ -1,0 +1,307 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<title>BarWeinigBarWeinig</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="Media/Logo2.jpeg" >
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+    body {
+        font-family: "Lato", sans-serif
+    }
+
+    .mySlides {
+        display: none
+    }
+
+    .photo {
+        max-height: 100px;
+        max-width: 30%;
+        width: auto;
+        height: auto;
+        margin: 3px;
+        padding: 1px;
+    }
+
+    .overlayer {
+        background-color: rgba(0, 0, 0, .5);
+        height: 100%;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        display: none;
+    }
+
+    #bigphotocenterer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+        padding-top: 20px;
+    }
+    #bigphoto {
+        flex-shrink: 0;
+        left: 50px;
+        top: 50px;
+        max-width: 80%;
+        max-height: 90%;
+
+    }
+</style>
+<body>
+    <!-- Link voor logo: https://logomakr.com/39ifXa -->
+    <!-- Navbar -->
+    <div class="w3-top">
+        <div class="w3-bar w3-pink w3-card">
+            <a class="w3-bar-item w3-button w3-hover-purple  w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i id="menu-toggle" class="fa fa-bars"></i></a>
+            <a href="#" class="w3-bar-item w3-button w3-hover-purple  w3-padding-large" onclick="hideKiekjes()">THUIS</a>
+            <a href="#concept" class="w3-bar-item w3-button w3-hover-purple w3-padding-large w3-hide-small" onclick="hideKiekjes()">CONCEPT</a>
+            <a href="#assortiment" class="w3-bar-item w3-button w3-hover-purple w3-padding-large w3-hide-small" onclick="hideKiekjes()">ASSORTIMENT</a>
+            <a class="w3-bar-item w3-button w3-hover-purple w3-padding-large w3-hide-small" onclick="loadKiekjes()">KIEKJES</a>
+            <a href="#contact" class="w3-bar-item w3-button w3-hover-purple  w3-padding-large w3-hide-small" onclick="hideKiekjes()">CONTACT</a>
+            <a href="javascript:void(0)" class="w3-padding-large w3-hover-red w3-hide-small w3-right"><i class="fa fa-search"></i></a>
+        </div>
+    </div>
+
+    <!-- Navbar on small screens (remove the onclick attribute if you want the navbar to always show on top of the content when clicking on the links) -->
+    <div id="navDemo" class="w3-bar-block w3-pink w3-hide w3-hide-large w3-hide-medium w3-top" style="margin-top:46px">
+        <a href="#" class="w3-bar-item w3-button w3-hover-purple w3-padding-large" onclick="hideKiekjes(); myFunction()">THUIS</a>
+        <a href="#concept" class="w3-bar-item w3-button w3-hover-purple w3-padding-large" onclick="hideKiekjes(); myFunction()">CONCEPT</a>
+        <a href="#assortiment" class="w3-bar-item w3-button w3-hover-purple w3-padding-large" onclick="hideKiekjes(); myFunction()">ASSORTIMENT</a>
+        <a class="w3-bar-item w3-button w3-hover-purple w3-padding-large" onclick="loadKiekjes(); myFunction()">KIEKJES</a>
+        <a href="#" class="w3-bar-item w3-button w3-hover-purple w3-padding-large" onclick="hideKiekjes(); myFunction()">CONTACT</a>
+    </div>
+
+    <div id="main" class="w3-purple" style="max-width:2000px;padding-top:60px;padding-left:2px;padding-right:2px">
+        <!-- Automatic Slideshow Images -->
+        <!-- The Band Section -->
+        <div class="w3-container w3-content w3-center w3-pink w3-card" style="max-width:800px; padding:5px; border-radius:5px" id="concept">
+            <div class="w3-black w3-card" style="border-radius:5px">
+                <img id="slideshow-right-logo" class="w3-card" src="Media/Logo2.jpeg" style="width:50%; max-width:300px" />
+            </div>
+            <div class="container w3-card w3-purple" style="margin:30px; padding:5px; border-radius:5px;">
+                <h2 style="font-size:1.5em;">Aftermovie Pilot in het Park</h2>
+                <video controls style="max-width: 100%; max-height: 100%; ">
+                    <source src="Media/BarWeinig-Tuinwarming-01052018-v02.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                </video>
+            </div>
+            <h2 class="w3-wide">Bar Weinig Concept</h2>
+            <p class="w3-opacity"><i></i></p>
+            <p class="w3-center">
+                Bar Weinig is de ideale aanvulling op het reguliere bar aanbod van een festival.
+            </p>
+            <p class="">
+                Bij de doorsnee bar plaats je je bestelling, ontvang je deze, betaal je en je bent weer weg...
+            </p>
+            <p class="">
+                Bar weinig interactie en bar weinig service!
+            </p>
+            <p class="">
+                Bij Bar Weinig draait het om de beleving. Wij bieden een interactieve baromgeving met hoogwaardige dienstverlening en een volledig servicepakket voor de ultieme festivalervaring. Bar weinig? Das niet veel, wel weinig en das niet niks! Meer service dan inhoud.
+            </p>
+            <p class="w3-center">
+                Wij opereren onafhankelijk van valuta en accepteren alles. De hele tent draait op ruilhandel (dat is Bar Weinig winst). Betalen gaat met pandapunten, haarpunten, bonuspunten, pizzapunten, karmapunten. Kom een cheque uitschrijven, sjekkie rollen, breng ons alsjeblieft een voucher. Bar Weinig inspiratie? Doe dan maar een muntje, want wij hebben ook dorst!
+
+                Afhankelijk van de festival vergunningen, mogelijkheden en bar-concurrentie zouden we ook shotjes wodka (Bar Weinig Cocktails) of bier (Koud en Lekker, lauw ook best lekker) kunnen verkopen voor een zo laag mogelijke prijs.
+            </p>
+            <p class="w3-black">
+
+                <h2 class="w3-wide" id="assortiment">Bar Weinig Assortiment</h2>
+                <div class="w3-container w3-purple w3-margin">
+                    <h5 class="w3-blue">Bar Weinig Talent</h5> Ben jij ook ergens bijzonder slecht in?! Schrijf je nu in voor ons open podium!
+                </div>
+                <div class="w3-container w3-purple w3-margin">
+                    <h5 class="w3-blue">Bar Weinig Karaoke</h5>
+                    Knallers als Daddy Cool, Yellow Submarine, Tequila en andere one-liners.
+                </div>
+                <div class="w3-container w3-purple w3-margin">
+                    <h5 class="w3-blue">Bar Weinig Workout</h5>
+                    Spontaan TeknoRobics PartyFitness tussendoortje van maximaal 1 nummer.
+                </div>
+                <div class="w3-container w3-purple w3-margin">
+                    <h5 class="w3-blue">Bar Weinig DJ's</h5>
+                    Draai je eigen plaatjes.
+                </div>
+                <div class="w3-container w3-purple w3-margin"><h5 class="w3-blue">Bar Weinig Powernap</h5> Happy Hardcore Halfuurtje!</div>
+                <div class="w3-container w3-purple w3-margin"><h5 class="w3-blue">Bar Weinig Kleding</h5> Want minder is altijd beter. Wij snoeien alle saaie stof weg en naaien je een nieuwe funky mouw aan.</div>
+                <div class="w3-container w3-purple w3-margin"><h5 class="w3-blue">Bar Weinig Spelletjes</h5> we doen alleen aan Geblinddoekt Voel Twister en Jungle Speed.</div>
+                <div class="w3-container w3-purple w3-margin"><h5 class="w3-blue">Bar Weinig Bingo</h5> ok� we doen ook muziekbingo. Happy Hardcore, Reggaeton, Dancehall of Disco Bingo.</div>
+                <div class="w3-container w3-purple w3-margin">
+                    <h5 class="w3-blue">Bar Weinig Glitter</h5>
+                    NATUURLIJK niet, BizAR VEEL glitter! (natuurlijk ecologisch, bar weinig vervuiling).
+                </div>
+                <div class="w3-container w3-purple w3-margin">
+                    <h5 class="w3-blue">Bar Weinig Naalden</h5>
+                    Artistiek met non-permanente airbrush tattoos: onze geweldige one-liners op je lijf.
+                    Deze zijn tijdelijk - dus bar weinig spijt.
+                </div>
+
+                <div class="w3-container w3-content w3-padding-64" style="max-width:800px" id="contact">
+                    <h2 class="w3-wide w3-center">CONTACT</h2>
+                    <div class="w3-row">
+                        <i class="fa fa-envelope" style="width:30px"> </i> Email: barweinigbar@gmail.com<br>
+                    </div>
+                </div>
+        </div>
+
+        <div class="w3-container" id="kiekjes" style="display: none">
+            <div id="bottomlayer">
+                <h2 class="w3-wide w3-center">Bar Weinig Kiekjes</h2>
+                <div id="fotoholder" class="container" style="display:flex; justify-content:space-around; flex-wrap: wrap">
+            </div>
+
+            <div class="overlayer" id="overlayer" onclick="hideBigKiekje()">
+                <div id="bigphotocenterer">
+                    <img class="w3-card" id="bigphoto" data-photonum="0" src="Media/slideshow0/1.jpg";/ onclick="nextBigKiekje()">
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <!-- Footer -->
+    <footer class="w3-container w3-padding-64 w3-center w3-purple w3-xlarge">
+        <a class="fa fa-facebook-official w3-hover-opacity" href="https://www.facebook.com/Barweinigbar/" target="_blank"></a>
+        <a class="fa fa-instagram w3-hover-opacity" href="https://www.instagram.com/barweinigbar/" target="_blank"></a>
+        <!--<i class="fa fa-snapchat w3-hover-opacity"></i>
+        <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+        <i class="fa fa-twitter w3-hover-opacity"></i>
+        <i class="fa fa-linkedin w3-hover-opacity"></i>-->
+        <p class="w3-medium">Powered by Ch@rLighting</p>
+    </footer>
+
+    <script>
+        // Automatic Slideshow - change image every 4 seconds
+        var myIndex = 0;
+        var numberOfSlides =[15, 9, 12];
+        var kiekjes_which = 0;
+        var carouselTimeout;
+        var fotosLoaded = false;
+        //carousel();
+        var filenames = ["Media/kiekjes/slide0(1).jpg", "Media/kiekjes/slide0(10).jpg", "Media/kiekjes/slide0(11).jpg", "Media/kiekjes/slide0(12).jpg", "Media/kiekjes/slide0(13).jpg", "Media/kiekjes/slide0(14).jpg", "Media/kiekjes/slide0(15).jpg", "Media/kiekjes/slide0(2).jpg", "Media/kiekjes/slide0(3).jpg", "Media/kiekjes/slide0(4).jpg", "Media/kiekjes/slide0(5).jpg", "Media/kiekjes/slide0(6).jpg", "Media/kiekjes/slide0(7).jpg", "Media/kiekjes/slide0(8).jpg", "Media/kiekjes/slide0(9).jpg", "Media/kiekjes/slide1(1).jpg", "Media/kiekjes/slide1(2).jpg", "Media/kiekjes/slide1(3).jpg", "Media/kiekjes/slide1(4).jpg", "Media/kiekjes/slide1(5).jpg", "Media/kiekjes/slide1(6).jpg", "Media/kiekjes/slide1(7).jpg", "Media/kiekjes/slide1(8).jpg", "Media/kiekjes/slide1(9).jpg", "Media/kiekjes/slide2(1).jpg", "Media/kiekjes/slide2(10).jpg", "Media/kiekjes/slide2(11).jpg", "Media/kiekjes/slide2(12).jpg", "Media/kiekjes/slide2(2).jpg", "Media/kiekjes/slide2(3).jpg", "Media/kiekjes/slide2(4).jpg", "Media/kiekjes/slide2(5).jpg", "Media/kiekjes/slide2(6).jpg", "Media/kiekjes/slide2(7).jpg", "Media/kiekjes/slide2(8).jpg", "Media/kiekjes/slide2(9).jpg"];
+        var tn_filenames = ["Media/kiekjes/tn_slide0(1).jpg", "Media/kiekjes/tn_slide0(10).jpg", "Media/kiekjes/tn_slide0(11).jpg", "Media/kiekjes/tn_slide0(12).jpg", "Media/kiekjes/tn_slide0(13).jpg", "Media/kiekjes/tn_slide0(14).jpg", "Media/kiekjes/tn_slide0(15).jpg", "Media/kiekjes/tn_slide0(2).jpg", "Media/kiekjes/tn_slide0(3).jpg", "Media/kiekjes/tn_slide0(4).jpg", "Media/kiekjes/tn_slide0(5).jpg", "Media/kiekjes/tn_slide0(6).jpg", "Media/kiekjes/tn_slide0(7).jpg", "Media/kiekjes/tn_slide0(8).jpg", "Media/kiekjes/tn_slide0(9).jpg", "Media/kiekjes/tn_slide1(1).jpg", "Media/kiekjes/tn_slide1(2).jpg", "Media/kiekjes/tn_slide1(3).jpg", "Media/kiekjes/tn_slide1(4).jpg", "Media/kiekjes/tn_slide1(5).jpg", "Media/kiekjes/tn_slide1(6).jpg", "Media/kiekjes/tn_slide1(7).jpg", "Media/kiekjes/tn_slide1(8).jpg", "Media/kiekjes/tn_slide1(9).jpg", "Media/kiekjes/tn_slide2(1).jpg", "Media/kiekjes/tn_slide2(10).jpg", "Media/kiekjes/tn_slide2(11).jpg", "Media/kiekjes/tn_slide2(12).jpg", "Media/kiekjes/tn_slide2(2).jpg", "Media/kiekjes/tn_slide2(3).jpg", "Media/kiekjes/tn_slide2(4).jpg", "Media/kiekjes/tn_slide2(5).jpg", "Media/kiekjes/tn_slide2(6).jpg", "Media/kiekjes/tn_slide2(7).jpg", "Media/kiekjes/tn_slide2(8).jpg", "Media/kiekjes/tn_slide2(9).jpg"];
+        var nextClicked = false;
+
+        function carousel() {
+            console.log(kiekjes_which);
+            var filename = "Media/slideshow" + kiekjes_which + "/" + Math.floor(Math.random()*numberOfSlides[kiekjes_which]+1) + ".jpg";
+            console.log(filename);
+            document.getElementById("slideshow-foto").src = filename;
+            carouselTimeout = setTimeout(carousel, 4000);
+        }
+
+        // Used to toggle the menu on small screens when clicking on the menu button
+        function myFunction() {
+            var x = document.getElementById("navDemo");
+            if (x.className.indexOf("w3-show") == -1) {
+                x.className += " w3-show";
+            } else {
+                x.className = x.className.replace(" w3-show", "");
+            }
+        }
+
+        function changeKiekjes(which) {
+            kiekjes_which = which;
+            myIndex = 0;
+            clearTimeout(carouselTimeout);
+            carousel();
+        }
+
+        function loadKiekjes()
+        {
+            if (fotosLoaded == false) {
+                fotholder = document.getElementById("fotoholder");
+                for (i in tn_filenames)
+                {
+                    var img = document.createElement("IMG");
+                    img.src = tn_filenames[i];
+                    img.className = "photo w3-card w3-button w3-hover-pink";
+                    img.id = i;
+                    img.onclick = function(e) { zoomKiekje(e) };
+                    fotoholder.appendChild(img);
+                }
+            }
+
+            document.getElementById("concept").style.display = "none";
+            document.getElementById("kiekjes").style.display = "inline";
+            fotosLoaded = true;
+        }
+
+        function zoomKiekje(e)
+        {
+            var photonum = e.srcElement.id;
+            document.getElementById("bigphoto").src = filenames[photonum];
+            document.getElementById("bigphoto").setAttribute('data-photonum', photonum);
+
+            console.log(e.srcElement.id);
+            document.getElementById("overlayer").style.display = "inline";
+            document.body.style.overflow = "hidden";
+            //document.html.style.overflow = "hidden";
+        }
+
+        function hideBigKiekje()
+        {
+            if (nextClicked == false) {
+                document.getElementById("overlayer").style.display = "none";
+                document.body.style.overflow = "scroll";
+                //document.html.style.overflow = "scroll";
+            }
+            else
+            {
+                nextClicked = false;
+            }
+            
+        }
+
+        function nextBigKiekje()
+        {
+            var photonum = document.getElementById("bigphoto").getAttribute('data-photonum');
+            var newphotonum = parseInt(photonum) + 1
+            if (newphotonum >= filenames.length)
+            {
+                hideBigKiekje();
+            }
+            else
+            {
+                document.getElementById("bigphoto").setAttribute('data-photonum', newphotonum);
+                var srcnext = filenames[newphotonum];
+                document.getElementById("bigphoto").src = srcnext;
+                nextClicked = true;
+            }
+        }
+
+        function hideKiekjes()
+        {
+            document.getElementById("concept").style.display = "";
+            document.getElementById("kiekjes").style.display = "none";
+        }
+
+        function nextPhoto(){
+            clearTimeout(carouselTimeout);
+            carousel();
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        
+        window.onclick = function (event) {
+            console.log("yes");
+            var navmenu = document.getElementById('navDemo');
+            
+            if (event.target.parentNode != navmenu) {
+                if (event.target != document.getElementById('menu-toggle')) {
+                    //navmenu.className = navmenu.className.replace(" w3-show", "");
+                }
+                console.log("yesyes");
+            }
+        }
+    </script>
+
+</body>
+</html>
