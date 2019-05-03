@@ -185,6 +185,7 @@
         var fotosLoaded = false;
         //carousel();
         var filenames = ["Media/kiekjes/slide0(1).jpg", "Media/kiekjes/slide0(10).jpg", "Media/kiekjes/slide0(11).jpg", "Media/kiekjes/slide0(12).jpg", "Media/kiekjes/slide0(13).jpg", "Media/kiekjes/slide0(14).jpg", "Media/kiekjes/slide0(15).jpg", "Media/kiekjes/slide0(2).jpg", "Media/kiekjes/slide0(3).jpg", "Media/kiekjes/slide0(4).jpg", "Media/kiekjes/slide0(5).jpg", "Media/kiekjes/slide0(6).jpg", "Media/kiekjes/slide0(7).jpg", "Media/kiekjes/slide0(8).jpg", "Media/kiekjes/slide0(9).jpg", "Media/kiekjes/slide1(1).jpg", "Media/kiekjes/slide1(2).jpg", "Media/kiekjes/slide1(3).jpg", "Media/kiekjes/slide1(4).jpg", "Media/kiekjes/slide1(5).jpg", "Media/kiekjes/slide1(6).jpg", "Media/kiekjes/slide1(7).jpg", "Media/kiekjes/slide1(8).jpg", "Media/kiekjes/slide1(9).jpg", "Media/kiekjes/slide2(1).jpg", "Media/kiekjes/slide2(10).jpg", "Media/kiekjes/slide2(11).jpg", "Media/kiekjes/slide2(12).jpg", "Media/kiekjes/slide2(2).jpg", "Media/kiekjes/slide2(3).jpg", "Media/kiekjes/slide2(4).jpg", "Media/kiekjes/slide2(5).jpg", "Media/kiekjes/slide2(6).jpg", "Media/kiekjes/slide2(7).jpg", "Media/kiekjes/slide2(8).jpg", "Media/kiekjes/slide2(9).jpg"];
+        var tn_filenames = ["Media/kiekjes/tn_slide0(1).jpg", "Media/kiekjes/tn_slide0(10).jpg", "Media/kiekjes/tn_slide0(11).jpg", "Media/kiekjes/tn_slide0(12).jpg", "Media/kiekjes/tn_slide0(13).jpg", "Media/kiekjes/tn_slide0(14).jpg", "Media/kiekjes/tn_slide0(15).jpg", "Media/kiekjes/tn_slide0(2).jpg", "Media/kiekjes/tn_slide0(3).jpg", "Media/kiekjes/tn_slide0(4).jpg", "Media/kiekjes/tn_slide0(5).jpg", "Media/kiekjes/tn_slide0(6).jpg", "Media/kiekjes/tn_slide0(7).jpg", "Media/kiekjes/tn_slide0(8).jpg", "Media/kiekjes/tn_slide0(9).jpg", "Media/kiekjes/tn_slide1(1).jpg", "Media/kiekjes/tn_slide1(2).jpg", "Media/kiekjes/tn_slide1(3).jpg", "Media/kiekjes/tn_slide1(4).jpg", "Media/kiekjes/tn_slide1(5).jpg", "Media/kiekjes/tn_slide1(6).jpg", "Media/kiekjes/tn_slide1(7).jpg", "Media/kiekjes/tn_slide1(8).jpg", "Media/kiekjes/tn_slide1(9).jpg", "Media/kiekjes/tn_slide2(1).jpg", "Media/kiekjes/tn_slide2(10).jpg", "Media/kiekjes/tn_slide2(11).jpg", "Media/kiekjes/tn_slide2(12).jpg", "Media/kiekjes/tn_slide2(2).jpg", "Media/kiekjes/tn_slide2(3).jpg", "Media/kiekjes/tn_slide2(4).jpg", "Media/kiekjes/tn_slide2(5).jpg", "Media/kiekjes/tn_slide2(6).jpg", "Media/kiekjes/tn_slide2(7).jpg", "Media/kiekjes/tn_slide2(8).jpg", "Media/kiekjes/tn_slide2(9).jpg"];
         var nextClicked = false;
 
         function carousel() {
@@ -216,10 +217,10 @@
         {
             if (fotosLoaded == false) {
                 fotholder = document.getElementById("fotoholder");
-                for (i in filenames)
+                for (i in tn_filenames)
                 {
                     var img = document.createElement("IMG");
-                    img.src = filenames[i];
+                    img.src = tn_filenames[i];
                     img.className = "photo w3-card w3-button w3-hover-pink";
                     img.id = i;
                     img.onclick = function(e) { zoomKiekje(e) };
@@ -234,9 +235,9 @@
 
         function zoomKiekje(e)
         {
-            document.getElementById("bigphoto").src = e.srcElement.src;
-            document.getElementById("bigphoto").setAttribute('data-photonum', e.srcElement.id);
-            console.log(document.getElementById("bigphoto").getAttribute('data-photonum'));
+            var photonum = e.srcElement.id;
+            document.getElementById("bigphoto").src = filenames[photonum];
+            document.getElementById("bigphoto").setAttribute('data-photonum', photonum);
 
             console.log(e.srcElement.id);
             document.getElementById("overlayer").style.display = "inline";
